@@ -1,0 +1,86 @@
+# commands to configure your profile
+git config --global user.name "Chandandeep22"
+$ git config --global user.email "csingh@bdo.ca"
+
+# open a new terminal in VS code below command to initalize git for the folder 
+git init  
+# list all the files in the folder and check for the git command
+ls -la
+
+# commands to stage the changes in the repo
+git add filename 
+git add -all
+git add.
+# commands to check the status of the of what is going on 
+git status
+# command to unstage the changes
+git restore .
+
+# command to check the log of what has happened so far--- check the internet for this
+git log
+# commit
+git commit -m "Message"
+
+
+#ignoring files
+-sensitive info
+-personal notes that you don't want to share with others
+-systems files
+# you can do this using .gitignore file in the root directory and then adding all the extensions in the file -- research internet for this
+# you can create a global ignore file and then use below command to point to config variable to that file
+git config --global core.excludefile [file]
+# clearing cache -- i you have done a lot of commits and then added something to the git ignore files then you might face a problem
+please use the below command for clearing cache to resolve this
+git rm -r --cahed .  
+
+# deleting and renaming a file
+git rm file name # deleting a file name
+git status # this will show that the file is removed and is moved to the stage 
+git restore -S . # unstage the changes
+git restore . # restore in local
+git mv test-delete.txt test-rename.txt # rename the file
+
+# differences -----------it should be radable so use vs code source control editor
+git diff 
+# when you reach unlimited lines press q to extensions
+git log --oneline # to make the log readable
+# if you are comparing a lot then use extension git lens 
+git diff 1eceb0c
+
+#changing history
+git commit --amend  # will open a unix editor and will enable you to change the commit Message
+git reset a3d3e71 # hash id of the commit that you would like to reset
+git reset --hard a3d3e71 # will delete all the commits before that i.e rewind time -- not a safe command
+
+# branches
+git branch # list all the branches in the repo
+git switch -c test-branch # creates a new branch 
+git switch user/chan-singh-dbt-courses # change current branch to the mentioned branch
+git merge test-branch # will merge the mentioned branch to the current branch
+git branch --delete test-branch # delete the mentioned branch
+# the above sequence is called git flow
+
+
+
+# remote set up
+git remote add NAME URL    # set up the remote repo
+git remote remove NAME     # remove the remote repo
+git rename OLDNAME NEWNAME # rename an old repo to the new name
+git remote -v             # list all the remote set up
+
+# git push
+git push REMOTE branch
+# git push --set-upstream-to origin branchname
+git push -u origin main # set-upstream for the first time
+# git push --all
+
+
+
+
+
+
+
+
+
+
+
