@@ -1,4 +1,4 @@
-with customers as (
+with customers1 as (
 
     select * from {{ ref('stg_customers')}}
 
@@ -39,7 +39,7 @@ final as (
         customer_orders.most_recent_order_date,
         coalesce(customer_orders.number_of_orders, 0) as number_of_orders,
         coalesce(lifetime_value,0) as lifetime_value
-    from customers
+    from customers1
 
     left join customer_orders using (customer_id)
 
