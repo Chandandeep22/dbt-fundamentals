@@ -77,11 +77,7 @@ git push -u origin main # set-upstream for the first time
 git clone URL # download the url folder to your local
 git fetch # will sync you r local with remote
 pull
-
 git branch -a # show all the branches remote as well as local
-
-
-
 
 
 
